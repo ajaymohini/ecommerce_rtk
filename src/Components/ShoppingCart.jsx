@@ -43,9 +43,9 @@ const ShoppingCart = () => {
         </ul>
         <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
       </div>
-      <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
+      <div>{totalAmount ? <div> The total amount is {totalAmount}</div> : ''}</div>
     </>
   );
 };
 
-export default ShoppingCart;
+export default ShoppingCart;  
