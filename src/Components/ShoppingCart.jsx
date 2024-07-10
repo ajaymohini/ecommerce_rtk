@@ -4,6 +4,7 @@ import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuanti
 import './ShoppingCart.css'; // Import CSS file for component-specific styles
 
 const ShoppingCart = () => {
+  console.log("ShoppingCart")
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.cartItems);
   const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);

@@ -16,6 +16,7 @@ const ProductList = () => {
   const handleAddToCart = product => {
     dispatch(addItemToCart(product));
     setDisabledProducts([...disabledProducts, product.id]); // Mark the product as disabled
+    console.log("Just Invoked");
   };
 
   return (
@@ -25,13 +26,9 @@ const ProductList = () => {
         {products.map(product => (
           <li key={product.id} className="product-list-item">
             <span>{product.name} - ${product.price}</span>
-            <button 
-              className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`} 
+            <button className={`add-to-cart-btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`} 
               onClick={() => handleAddToCart(product)}
-              disabled={disabledProducts.includes(product.id)} // Disable button if product is in disabledProducts
-            >
-              Add to Cart
-            </button>
+              disabled={disabledProducts.includes(product.id)}>Add to Cart</button>
           </li>
         ))}
       </ul>

@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 
 
 const SuperCoin = () => {
+    console.log("SuperCoin")
 const [superCoins, setSuperCoins] = useState(0);
 const cartItems = useSelector(state => state.cart.cartItems);
 const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -18,6 +19,8 @@ useEffect(() => {
       setSuperCoins(0);
     }
   }, [totalAmount]);
+
+  console.log("Total Amount" + totalAmount);
 
 return(
     <>
